@@ -7,7 +7,7 @@
     "build": "babel src --out-dir dist --extensions \".ts\" --source-maps inline",
     "build-watch": "babel -w ./src --out-dir lib --extensions \".ts\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-start": "cross-env NODE_ENV=dev nodemon --exec ts-node src/index.ts",
+    "dev-start": "npm run build && cross-env NODE_ENV=dev node ./dist/index.js",
     "prod-start": "npm run build && cross-env NODE_ENV=prod node ./dist/index.js"
   },
   "author": "",
@@ -39,6 +39,7 @@
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "fp-ts": "^2.12.3",
+    "helmet": "^6.0.0",
     "inversify": "^6.0.1",
     "reflect-metadata": "^0.1.13",
     "serializr": "^2.0.5",

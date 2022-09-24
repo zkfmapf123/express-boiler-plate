@@ -1,5 +1,15 @@
 # Express-Inversify-Boiler-plate
 
+## Description
+
+```
+    Server
+    - (master 기준) git switch feature/server
+
+    Serverless
+    - (master 기준) git switch feature/serverless
+```
+
 - Express
 - Inversify
 - Decorator
@@ -58,7 +68,7 @@
 
 > src/utils
 
-- Utils 함수
+- Utils 함수, Static Class로 관리됩니다.
 
 > src/helpers
 
