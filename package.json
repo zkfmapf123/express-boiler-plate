@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir dist --extensions \".ts\" --source-maps inline",
+    "build-watch": "babel -w ./src --out-dir lib --extensions \".ts\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-start": "npm run build && ts-node ./index.ts"
+    "dev-start": "cross-env NODE_ENV=dev nodemon --exec ts-node src/index.ts",
+    "prod-start": "npm run build && cross-env NODE_ENV=prod node ./dist/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +17,7 @@
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
     "eslint": "^8.24.0",
+    "nodemon": "^2.0.20",
     "prettier": "^2.7.1"
   },
   "dependencies": {
@@ -27,12 +30,18 @@
     "@babel/preset-env": "^7.19.1",
     "@babel/preset-typescript": "^7.18.6",
     "@types/node": "^18.7.19",
+    "await-to-js": "^3.0.0",
     "babel-plugin-inline-json-import": "^0.3.2",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-parameter-decorator": "^1.0.16",
+    "cross-env": "^7.0.3",
+    "dayjs": "^1.11.5",
+    "dotenv": "^16.0.2",
     "express": "^4.18.1",
+    "fp-ts": "^2.12.3",
     "inversify": "^6.0.1",
     "reflect-metadata": "^0.1.13",
+    "serializr": "^2.0.5",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.3"
   }

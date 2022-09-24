@@ -34,7 +34,7 @@
 
 > src/configs
 
-- 환경변수
+- 환경변수...
 
 > src/controllers
 
@@ -51,10 +51,6 @@
 > src/middlewares
 
 - Middlwares
-
-> src/policies
-
-- Server 실행 시 필요한 라이브러리 설정 ex) Inversify, Swagger
 
 > src/repositories
 
