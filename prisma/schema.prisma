@@ -1,0 +1,54 @@
+// todo use env
+datasource db {
+    provider = "mysql"
+    url = "mysql://root:test@localhost:3306/deliver"
+}
+
+model Shops {
+    id Int @id @default(autoincrement())
+    name String @unique 
+    address String 
+    created_at Int
+    updated_at Int
+
+    // releation
+    menus Menus[] // 1:N
+    orders Orders[] // 1:N
+    
+    // index
+    @@index([name], name: "idx_name")
+}
+
+model Menus {
+    id Int @id @default(autoincrement())
+    food_name String
+    shop_id Int
+    shop Shops @relation(fields: [shop_id], references: [id])
+
+    // releation
+    orderfoods OrderFoods[]
+
+    // index
+    @@index([food_name], name:"idx_food_name")
+}
+
+model Orders {
+    id Int @id @default(autoincrement())
+    shop_id Int
+    address String
+    order_at Int
+    confirma_at Int?
+    shop Shops @relation(fields: [shop_id], references: [id])
+
+    // relation
+    orderFoods OrderFoods[]
+}
+
+model OrderFoods {
+    id Int @id
+    orderId Int
+    menuId Int
+
+    order Orders @relation(fields: [orderId], references: [id])
+    menu Menus @relation(fields: [menuId], references: [id])
+}
