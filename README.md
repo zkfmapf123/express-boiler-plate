@@ -1,11 +1,12 @@
-# Mini-Architecture-Server
+# Express-Boiler-Plate (ver.2022)
 
 ## Desc
 
-- 주문관리 시스템
+## Setting
 
-## Architecture
+- Prisma
+- Serialize (Mapper, Mappers)
+- Mysql2
+- Decoreators
 
-![DDD](./public/ddd.png)
-
-## API endpoint
+- Made by Leedonggyu...
