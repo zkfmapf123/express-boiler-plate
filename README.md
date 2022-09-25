@@ -4,9 +4,12 @@
 
 ## Setting
 
+- FP (fp-ts, rxjs)
 - Prisma
 - Serialize (Mapper, Mappers)
 - Mysql2
 - Decoreators
+
+### ...
 
 - Made by Leedonggyu...
